@@ -27,6 +27,8 @@ folder_name = curr_governor + "/test_flappy_bird"
 
 test_count = int(sys.argv[1])
 
+connect()
+
 for test_i in range(test_count):
 
     MonkeyRunner.sleep(4)

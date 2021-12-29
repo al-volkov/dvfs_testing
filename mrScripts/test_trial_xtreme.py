@@ -25,7 +25,9 @@ folder_name = curr_governor + "/test_trial_xtreme"
 
 test_count = int(sys.argv[1])
 
-time_limit = 900
+time_limit = 10
+
+connect()
 
 for test_i in range(test_count):
 
