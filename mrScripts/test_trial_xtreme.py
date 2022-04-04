@@ -21,11 +21,11 @@ runComponent = package + "/" + activity
 w = int(device.getProperty("display.width"))
 h = int(device.getProperty("display.height"))
 
-folder_name = curr_governor + "/test_trial_xtreme"
+folder_name =  "spsa2/test_trial_xtreme"
 
 test_count = int(sys.argv[1])
 
-time_limit = 10
+time_limit = 150  # 300
 
 connect()
 
@@ -44,27 +44,29 @@ for test_i in range(test_count):
     current_sec = time.time()
 
     # play button
-    device.touch(h/1.12129, w/1.18033, "DOWN_AND_UP")
+    device.touch(2000, 900, "DOWN_AND_UP")
     MonkeyRunner.sleep(3)
     # select location
-    device.touch(h/2.83125, w/2.07692, "DOWN_AND_UP")
+    device.touch(700, 300, "DOWN_AND_UP")
     MonkeyRunner.sleep(3)
     # select bike
-    device.touch(h/1.1325, w/1.18681, "DOWN_AND_UP")
+    device.touch(2000, 975, "DOWN_AND_UP")
     MonkeyRunner.sleep(3)
     # select level
-    device.touch(h/2.22059, w/3.6, "DOWN_AND_UP")
+    device.touch(1550, 350, "DOWN_AND_UP")
     MonkeyRunner.sleep(1.5)
     # start
-    device.touch(h/1.1325, w/1.18681, "DOWN_AND_UP")
-    MonkeyRunner.sleep(5)
+    # device.touch(h/1.1325, w/1.18681, "DOWN_AND_UP")
+    # MonkeyRunner.sleep(5)
     # play
     while current_sec - start_sec < time_limit:
-        device.touch(h/1.1325, w/1.18681, MonkeyDevice.DOWN)
+        device.touch(1600, 900, "DOWN_AND_UP")
+        device.touch(1935, 910, MonkeyDevice.DOWN)
         MonkeyRunner.sleep(10)
-        device.touch(h/1.1325, w/1.18681, MonkeyDevice.UP)
+        device.touch(1600, 900, "DOWN_AND_UP")
+        device.touch(1935, 910, MonkeyDevice.UP)
         # restart
-        device.touch(h/1.48039, w/1.18681, "DOWN_AND_UP")
+        device.touch(1600, 900, "DOWN_AND_UP")
         MonkeyRunner.sleep(3)
         current_sec = time.time()
 

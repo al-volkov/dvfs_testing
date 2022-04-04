@@ -10,6 +10,8 @@ os.system(cmd_gov_set(7, curr_governor))
 
 device = MonkeyRunner.waitForConnection()
 
+
+
 device.installPackage("apk/com-dotgears-flappybird.apk")
 
 package = "com.dotgears.flappybird"
@@ -21,9 +23,9 @@ runComponent = package + "/" + activity
 w = int(device.getProperty("display.width"))
 h = int(device.getProperty("display.height"))
 
-time_limit = 900
+time_limit = 180
 
-folder_name = curr_governor + "/test_flappy_bird"
+folder_name =  "spsa2/test_trial_xtreme"
 
 test_count = int(sys.argv[1])
 
@@ -62,4 +64,6 @@ for test_i in range(test_count):
     device.press('KEYCODE_HOME', MonkeyDevice.DOWN_AND_UP)
     kill_command = 'am force-stop %s' % package
     device.shell(kill_command)
+
+os.system("adb shell \"su -c \'dmesg\'\" > log-ondemand.txt")
 
