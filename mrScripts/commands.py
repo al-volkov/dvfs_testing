@@ -45,7 +45,7 @@ def cmd_gfxinfo_dump(package, test_i, folder_name):
 
 
 def cmd_video_playing():
-    return "adb shell am start -a android.intent.action.VIEW -d file:///sdcard/video.mp4 -t video/mp4"
+    return "adb shell am start -a android.intent.action.VIEW -d file:///sdcard/Download/video.mp4 -t video/mp4"
 
 
 def cmd_start_test(test, governor, test_cnt):
